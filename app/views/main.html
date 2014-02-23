@@ -1,41 +1,35 @@
-
-
 <div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#/detail">Home</a></li>
-  </ul>
-  <h3 class="text-muted">Social AEE</h3>
+    <ul class="nav nav-pills pull-right">
+        <li class="active"><a ng-href="#/detail">Home</a></li>
+    </ul>
+    <h3 class="text-muted">Social AEE</h3>
 </div>
 
 <div class="container">
-    <h2>Seleccione un Pueblo</h2>
+    <!--<h2>Seleccione un Pueblo</h2>-->
     <br>
-    <div class="col-md-4 form">
+
+    <div class="col-sm-12 form">
         <div class="form-group">
             <label for="pueblo">Pueblo</label>
             <select id="pueblo" ng-model="pueblo" ng-options="p.name for p in pueblos"/>
         </div>
     </div>
 
-    <div class="col-md-8 panel">
+    <div ng-show="stats" class="panel panel-default">
+        <div class="panel-heading">{{stats.name}}: {{stats.incidents}} incidentes<br>
+        </div>
         <div class="panel-body">
-            <div ng-show="stats">
-                {{stats.name}}: {{stats.incidents}} incidentes<br>
-                <div ng-repeat="incident in dataObj.return">
-                    <br>
-                    Lugar: {{incident.r2Area}}<br>
-                    Status: {{incident.r3Status}}<br>
-                    Fecha de Actualizaci&oacute;n: {{incident.r4LastUpdate}}<br>
-                    <a href="#">Ver Detalle</a>
-                    <br>
-                </div>
-            </div>
-            <br>
+
+
+            <ul class="list-group">
+                <li ng-repeat="incident in dataObj.return" class="list-group-item">{{incident.r2Area}}</li>
+            </ul>
+
         </div>
     </div>
+
+
 </div>
 
 
-<div class="footer">
-  <p>this is an awesome footer</p>
-</div>

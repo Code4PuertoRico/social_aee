@@ -9,7 +9,7 @@ function initialize() {
 
 $(document).ready(function(){
     findNearbyLocations (function(town){
-        alert(town);
+//        alert(town);
     })
 });
 
