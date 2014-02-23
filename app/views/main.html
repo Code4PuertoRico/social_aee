@@ -1,11 +1,7 @@
-<div class="header">
-    <ul class="nav nav-pills pull-right">
-        <li class="active"><a ng-href="#/detail">Home</a></li>
-    </ul>
-    <h3 class="text-muted">Social AEE</h3>
-</div>
+
 
 <div class="container">
+
     <!--<h2>Seleccione un Pueblo</h2>-->
     <!--<br>-->
 
@@ -32,7 +28,7 @@
     <div ng-show="pueblos" ng-init="load(pueblos)" class="panel panel-default">
         <div class="panel-body">
             <ul class="list-group" ng-repeat="pueblo in pueblos">
-                <li class="list-group-item">
+                <li class="list-group-item" ng-click="goToDetail(pueblo)">
                     <span class="badge">{{pueblo.incidents}}</span>
                     {{pueblo.name}}
                 </li>

@@ -1,5 +1,5 @@
 
-<h3><i class="glyphicon glyphicon-map-marker"></i> Yauco</h3>
+<h3><i class="glyphicon glyphicon-map-marker"></i> {{pueblo}}</h3>
 
 <div class="row">
     <div class="col-sm-6 col-md-4">
@@ -9,7 +9,7 @@
 
 
         </div>
-        <div class="thumbnail" >
+        <div class="thumbnail" ng-repeat="incident in dataObj.return" >
 
             <!--<img src="http://maps.googleapis.com/maps/api/staticmap?center=17.9666, -66.0611&zoom=11&size=300x200&sensor=false">-->
 
@@ -18,7 +18,7 @@
                     <div class="col-sm-12">
                         <div class="pull-left">
                             <h4>
-                                <i class="glyphicon glyphicon-screenshot"></i>&nbsp;Bo Vega
+                                <i class="glyphicon glyphicon-screenshot"></i>&nbsp;{{incident.r2Area}}
                             </h4>
                         </div>
                         <div class="pull-right" style="margin-top:10px">
@@ -30,10 +30,9 @@
 
                 </div>
 
-                            <!--{{i.r3Status}}-->
+                            <!---->
                 <div class="alert alert-danger">
-                    <a href="#" class="alert-link">&nbsp;<i class="glyphicon glyphicon-warning-sign"></i> Interrupcion
-                        Programada</a>
+                    <a href="#" class="alert-link">&nbsp;<i class="glyphicon glyphicon-warning-sign"></i> {{incident.r3Status}}</a>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
