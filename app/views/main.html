@@ -6,10 +6,29 @@
 </div>
 
 <div class="container">
+    <h2>Seleccione un Pueblo</h2>
+    <br>
     <div class="col-md-4 form">
         <div class="form-group">
             <label for="pueblo">Pueblo</label>
-            <select ng-model="pueblo" ng-options="p.name for p in pueblos"/>
+            <select id="pueblo" ng-model="pueblo" ng-options="p.name for p in pueblos"/>
+        </div>
+    </div>
+
+    <div class="col-md-8 panel">
+        <div class="panel-body">
+            <div ng-show="stats">
+                {{stats.name}}: {{stats.incidents}} incidentes<br>
+                <div ng-repeat="incident in dataObj.return">
+                    <br>
+                    Lugar: {{incident.r2Area}}<br>
+                    Status: {{incident.r3Status}}<br>
+                    Fecha de Actualizaci&oacute;n: {{incident.r4LastUpdate}}<br>
+                    <a href="#">Ver Detalle</a>
+                    <br>
+                </div>
+            </div>
+            <br>
         </div>
     </div>
 </div>
