@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body >
+
+
+<h3><i class="glyphicon glyphicon-map-marker"></i> Yauco</h3>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <!--<img src="http://placehold.it/300x200" alt="...">-->
+            <img src="http://maps.googleapis.com/maps/api/staticmap?center=17.9666, -66.0611&zoom=11&size=300x200&sensor=false">
+
+            <div class="caption">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="pull-left">
+                            <h4>
+                                <i class="glyphicon glyphicon-screenshot"></i>&nbsp;Bo Vega
+                            </h4>
+                        </div>
+                        <div class="pull-right" style="margin-top:10px">
+                            <div class="fb-share-button " data-href="http://developers.facebook.com/docs/plugins/"
+                                 data-type="button_count"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alert alert-danger">
+                    <a href="#" class="alert-link">&nbsp;<i class="glyphicon glyphicon-warning-sign"></i> Interrupcion
+                        Programada</a>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--<p>-->
+                            <a href="#" class="btn-block btn btn-primary  " role="button"><i class="glyphicon glyphicon-user"></i>
+                            soy un afectado</a>
+                        <!--</p>-->
+                    </div>
+                </div>
+            </div>
+
+            <div><i class="glyphicon glyphicon-time"></i>&nbsp;Ultimo Estatus:&nbsp;<i id="lastUpdate"></i></div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="fb-comments" data-href="http://example.com/comments" data-numposts="5"
+             data-colorscheme="light"></div>
+    </div>
+</div>
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=462293407226659";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+$(document).ready(function () {
+    moment.lang('es');
+    $("#lastUpdate").html(moment.duration(-1, "minutes").humanize(true));
+});
+
+</script>
+</body>
+</html>
