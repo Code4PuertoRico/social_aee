@@ -7,28 +7,39 @@
 
 <div class="container">
     <!--<h2>Seleccione un Pueblo</h2>-->
-    <br>
+    <!--<br>-->
 
-    <div class="col-sm-12 form">
-        <div class="form-group">
-            <label for="pueblo">Pueblo</label>
-            <select id="pueblo" ng-model="pueblo" ng-options="p.name for p in pueblos"/>
-        </div>
-    </div>
+    <!--<div class="col-sm-12 form">-->
+        <!--<div class="form-group">-->
+            <!--<label for="pueblo">Pueblo</label>-->
+            <!--<select id="pueblo" ng-model="pueblo" ng-options="p.name for p in pueblos"/>-->
+        <!--</div>-->
+    <!--</div>-->
 
-    <div ng-show="stats" class="panel panel-default">
-        <div class="panel-heading">{{stats.name}}: {{stats.incidents}} incidentes<br>
-        </div>
+    <!--<div ng-show="stats" class="panel panel-default">-->
+        <!--<div class="panel-heading">{{stats.name}}: {{stats.incidents}} incidentes<br>-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+
+
+            <!--<ul class="list-group">-->
+                <!--<li ng-repeat="incident in dataObj.return" class="list-group-item">{{incident.r2Area}}</li>-->
+            <!--</ul>-->
+
+        <!--</div>-->
+    <!--</div>-->
+
+    <div ng-show="pueblos" ng-init="load(pueblos)" class="panel panel-default">
         <div class="panel-body">
-
-
-            <ul class="list-group">
-                <li ng-repeat="incident in dataObj.return" class="list-group-item">{{incident.r2Area}}</li>
+            <ul class="list-group" ng-repeat="pueblo in pueblos">
+                <li class="list-group-item">
+                    <span class="badge">{{pueblo.incidents}}</span>
+                    {{pueblo.name}}
+                </li>
             </ul>
 
         </div>
     </div>
-
 
 </div>
 
